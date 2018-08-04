@@ -1,0 +1,11 @@
+.table-wrapper-noBorder {
+  margin: 20px;
+}
+
+.good {
+  color: black;
+}
+.not-good {
+  color: red;
+  font-weight: bold
+}

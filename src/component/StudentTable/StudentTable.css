@@ -1,0 +1,21 @@
+.table-wrapper {
+  margin: 20px;
+  border: 1px solid #eee;
+}
+
+.table__row__avatar {
+  width: 20px;
+  height: 20px;
+}
+
+.good-rate {
+  color: orange;
+  font-weight: bold
+}
+.bad-rate {
+  color: red;
+  font-weight: bold
+}
+.common-rate {
+
+}

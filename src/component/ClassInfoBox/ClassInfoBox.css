@@ -1,0 +1,14 @@
+.class-info-list {
+  display: flex;
+  margin: 20px;
+}
+.class-info-area {
+  flex: 1;
+  text-align: center;
+  overflow: hidden;
+}
+.class-info-area__item {
+  display: inline;
+  margin-right: 10px;
+  font-weight: bold;
+}

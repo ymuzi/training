@@ -1,79 +1,28 @@
-body {
-  margin: 0;
-}
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-h2 {
-  margin: 0;
-}
-
-
-.chat-list {
-  padding-left: 10px;
-  border-bottom: 1px solid #eee;
-}
-.chat-list__item {
-  display: flex;
-  padding: 10px;
-  padding-left: 0;
-  border-top: 1px solid #eee;
-}
-/*.chat-list__item::before {
-  content: '';
-  display: block;
-  height: 1px;
-  width: 100%;
-  background: #eee;
-  transform: scaleY(0.5);
-}*/
-.chat-list__item__avatar {
-  width: 60px;
-  height: 60px;
-  margin-right: 10px;
-}
-.chat-list__item__content {
-  flex: 1;
-}
-.chat-list__item__content__topBar {
-  overflow: hidden;
-  line-height: 32px;
-}
-.chat-list__item__content__title {
-  float: left;
-  font-size: 16px;
-}
-.chat-list__item__content__time {
-  float: right;
-  font-size: 12px;
-  color: #aaa;
-}
-.chat-list__item__content__recentMsg {
-  font-size: 14px;
-  color: #aaa;
-}
-
-.chat-nav {
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  width: 100%;
-  border-top: 1px solid #eee; 
-}
-.chat-nav__item {
-  flex: 1;
-  padding: 5px;
+.App {
   text-align: center;
 }
-.chat-nav__item__icon {
-  display: block;
-  width: 40px;
-  height: 40px;
-  margin: 0 auto;
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
 }
-.chat-nav__item__name {
-  font-size: 12px;
-  color: #aaa;
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

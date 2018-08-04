@@ -1,0 +1,27 @@
+.table-group {
+  padding: 20px;
+}
+
+.table-item {
+  margin-bottom: 40px;
+}
+.table-item__title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 50px;
+}
+
+.good-rate {
+  color: orange;
+  font-weight: bold
+}
+.bad-rate {
+  color: red;
+  font-weight: bold
+}
+.common-rate {
+
+}
+.marginRight20 {
+  margin-right: 20px;
+}
