@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { Table } from 'antd'
-import Styles from './LessonsTable.css'
+import './LessonsTable.css'
 
 class LessonsTable extends Component { 
   renderState = (state) => {
     switch(state){
       case -1:
-        return <span>➖</span>
+        return <span aria-labelledby='jsx-a11y/accessible-emoji' role='img'>➖</span>
       case 1:
-        return <span>✅</span>
+        return <span aria-labelledby='jsx-a11y/accessible-emoji' role='img'>✅</span>
       case 0:
-        return <span>❌</span>
+        return <span aria-labelledby='jsx-a11y/accessible-emoji' role='img'>❌</span>
       default:
         return <span>{state}</span>
     }

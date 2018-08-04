@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux'
 import ActionTypes from '../const/ActionTypes'
 
 function satisfied(state={}, action) {

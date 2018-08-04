@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { Table, Icon, Popover, Button } from 'antd'
+import { Table, Icon, Popover } from 'antd'
 import './DataTables.css'
 import { browserHistory } from 'react-router';
 
 class DataTables extends Component {
   onRow = (record) => {
     return {
-      onClick: (e) => {
-        browserHistory.push(`/classDetail/${record.classInfo.id}`)
+      onClick: () => {
+        browserHistory.push(`/classDetail/${record.classInfo.id}`);
       },
     };
   }

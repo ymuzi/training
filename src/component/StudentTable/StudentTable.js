@@ -1,13 +1,12 @@
+/*eslint no-script-url: 0*/
 import React, { Component } from 'react'
 import { Table } from 'antd'
-import Styles from './StudentTable.css'
 import { browserHistory } from 'react-router';
 class StudentTable extends Component { 
   onRow = (record) => {
-    const router = this.props.router
     return {
-      onClick: e => {
-        browserHistory.push(`/userCenter/${record.mid}`)
+      onClick: () => {
+        browserHistory.push(`/userCenter/${record.mid}`);
       },
     };
   }
@@ -20,7 +19,7 @@ class StudentTable extends Component {
         dataIndex: 'hurl',
         align: 'center',
         render: info => (
-          <img className="table__row__avatar" src={info}/>
+          <img className="table__row__avatar" src={info} alt=''/>
         )
       }, {
         title: '学员名',

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Table, Icon, Popover, Button } from 'antd'
-import Styles from './SatisfiedTable.css'
+import { Table, Icon, Popover } from 'antd'
+import './SatisfiedTable.css'
 
 class SatisfiedTable extends Component { 
-  handleReply = (record, index) => {
+  handleReply = (index) => {
     const { lessonActions, userInfo } = this.props
     lessonActions.replyUserFeedBack({
       mid: userInfo.mid, 

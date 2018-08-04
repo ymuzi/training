@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Input, Select } from 'antd'
+import { Input, Select } from 'antd'
 import './StudentSearcher.css'
 const InputGroup = Input.Group;
 const Option = Select.Option;
@@ -29,7 +29,7 @@ class StudentSearcher extends Component {
     })
   }
   render() {
-    const { onSearch, options } = this.props
+    const { options } = this.props
     return (
       <div className="searcher-wrapper">
         <InputGroup compact>
