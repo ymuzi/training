@@ -43,6 +43,8 @@ const serverApi = () => next => action => {
   if (typeof params !== 'object') {
     throw new Error('Specify a object params.');
   }
+
+  const { normailzerFun } = action.SERVER_API;
   function actionWith(data) {
     const finalAction = { ...action, ...data };
     delete finalAction.SERVER_API;
@@ -54,10 +56,12 @@ const serverApi = () => next => action => {
   }));
   callServerApi({ endpoint, params })
     .then(res => {
+      const response = typeof (normailzerFun) !== 'undefined' ? normailzerFun(res.data) : res.data;
+
       next(actionWith({
         type: `${type}_SUC`,
         __api:{endpoint,params},
-        response: res.data
+        response: response
       }));
     })
     .catch(errMsg => {

@@ -3,45 +3,6 @@ import StudentsLib from './container/StudentsLib';
 import ClassDetail from './container/ClassDetail';
 import AppWrapper from './container/AppWrapper';
 
-// const rousteConfig = {
-//   childRoutes: [{
-//     path: '/',
-//     component: require('./container/AppWrapper').default,
-//     indexRoute: {
-//       getComponent(nextState, callback) {
-//         require.ensure([], require => {
-//           callback(null, require('./container/StudentsLib').default)
-//         }, 'studentsLib')
-//       }
-//     },
-//     childRoutes: [{
-//       path: 'userCenter',
-//       getComponent(nextState, callback) {
-//         require.ensure([], require => {
-//           callback(null, require('./container/UserCenter').default)
-//         }, 'userCenter')
-//       }
-//     }, {
-//       path: 'classDetail',
-//       getComponent(nextState, callback) {
-//         require.ensure([], require => {
-//           callback(null, require('./container/ClassDetail').default)
-//         }, 'classDetail')
-//       }
-//     }
-//     // {
-//     //   path: 'manage',
-//     //   getChildRoutes(nextState, callback) {
-//     //     require.ensure([], require => {
-//     //       callback(null, [
-//     //         { path: 'feedFlow(-:id)/allcomment(-:cid)', component: require('./containers/manage/allCommentPage/allCommentPage') },
-//     //       ])
-//     //     }, 'manage')
-//     //   }
-//     // }
-//     ]
-//   }]
-// }
 const routeConfig = { 
   path: '/',
   component: AppWrapper,
@@ -52,5 +13,7 @@ const routeConfig = {
     { path: 'classDetail/:classId', component: ClassDetail }
   ]
 }
+
+// /studentsLib
 
 export default routeConfig

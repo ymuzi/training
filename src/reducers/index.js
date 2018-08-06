@@ -5,7 +5,10 @@ import ui from './ui'
 import studentLib from './studentLib'
 import classesDetail from './classesDetail'
 import satisfied from './satisfied'
+import entities from './entities'
+
 const rootReducer = combineReducers({
+  entities,
   lessonInfo,
   userInfo,
   studentLib,

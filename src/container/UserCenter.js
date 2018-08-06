@@ -22,7 +22,8 @@ class UserCenter extends Component {
       currentLessonsList,
       historyLessonsList,
       satisfiedInfo,
-      lessonActions
+      lessonActions,
+      entities
     } = this.props
     // const mid = this.props.params.mid
     return (
@@ -30,6 +31,7 @@ class UserCenter extends Component {
         <UserInfoBox userInfo={userInfo} />
         <OpTabs 
           userInfo={userInfo}
+          entities={entities}
           lessonActions={lessonActions} 
           currentLessonsList={currentLessonsList}
           historyLessonsList={historyLessonsList}
@@ -47,10 +49,12 @@ const mapStateToProps = (state, ownProps) => {
       currentLessonsList,
       historyLessonsList
     },
-    satisfied
+    satisfied,
+    entities
   } = state
   const mid = ownProps.params.mid
   return {
+    entities,
     userInfo: userInfo[mid] || {},
     currentLessonsList: currentLessonsList[mid],
     historyLessonsList: historyLessonsList[mid],

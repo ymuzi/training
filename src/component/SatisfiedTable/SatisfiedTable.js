@@ -5,10 +5,11 @@ import './SatisfiedTable.css'
 
 class SatisfiedTable extends Component { 
   handleReply = (attr) => {
-    const {index} = attr;
+    const {index,record} = attr;
     const { lessonActions, userInfo } = this.props
     lessonActions.replyUserFeedBack({
-      mid: userInfo.mid, 
+      mid: userInfo.mid,
+      time: record.time, 
       lessonIndex: index
     })
   }
@@ -74,13 +75,25 @@ class SatisfiedTable extends Component {
   rowKey = (record,i) => `${record.class_info && record.class_info.id}_${i}`
 
   render() {
-    const { list } = this.props
-  
+    const { list, entities } = this.props
+    let newList = list;
+    if(list){
+      newList = list.map(t=>{
+        const satisfiled = entities.satisfiled[t];
+        return {
+          ...satisfiled,
+          class_info: entities.classes[satisfiled.class_info],
+          teacher_info: entities.teachers[satisfiled.teacher_info]
+        }
+      });
+    }
+
+
     return (
       <div className="table-wrapper">
         <Table 
           rowKey={this.rowKey} 
-          dataSource={list} 
+          dataSource={newList} 
           columns={this.columns} 
           pagination={false}
           bordered

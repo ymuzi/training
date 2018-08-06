@@ -17,7 +17,8 @@ class OpTabs extends Component {
         learningLesson
       },
       satisfiedInfo,
-      lessonActions
+      lessonActions,
+      entities
     } = this.props
     return (
       <Tabs tabBarStyle={{padding: '0 20px'}} defaultActiveKey="1" onChange={null}>
@@ -27,7 +28,7 @@ class OpTabs extends Component {
         </TabPane>
         <TabPane className="tab-pane" tab="满意度反馈" key='2'>
           <ButtonGroup customButtons={learningLesson}/>
-          <SatisfiedTable list={satisfiedInfo} lessonActions={lessonActions} userInfo={userInfo}/>
+          <SatisfiedTable entities={entities} list={satisfiedInfo} lessonActions={lessonActions} userInfo={userInfo}/>
         </TabPane>
       </Tabs>
     )
