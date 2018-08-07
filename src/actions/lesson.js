@@ -10,6 +10,14 @@ export default {
         endpoint: '/getLessonInfo',
         params: {
           mid: params.mid
+        },
+        normailzerFun:response => {
+          const history = normalize(response.data.historyLessonsList, schemes.LESSONS);
+          const current = normalize(response.data.currentLessonsList, schemes.LESSONS);
+          return {
+            history,
+            current
+          }
         }
       },
       mid: params.mid

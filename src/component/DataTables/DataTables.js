@@ -126,8 +126,29 @@ class DataTables extends Component {
     const { lessonInfo: {
       currentLessonsList,
       historyLessonsList
-    } } = this.props
-    
+    },entities } = this.props
+    let currentList,historyList;
+
+    if(currentLessonsList){
+      currentList = currentLessonsList.map(id=>{
+        const lesson = {...entities.lessons[id]};
+        const tenchersID = lesson.teacherInfo;
+        const teachers = entities.teachers;
+        lesson.teacherInfo = teachers[tenchersID];
+        lesson.classInfo = entities.classes[lesson.classInfo];
+        return lesson;
+      });
+    }
+
+    if(historyLessonsList){
+      historyList = historyLessonsList.map(id=>{
+        const lesson = {...entities.lessons[id]};
+        lesson.teacherInfo = entities.teachers[lesson.teacherInfo];
+        lesson.classInfo = entities.classes[lesson.classInfo];
+        return lesson;
+      });
+    }
+
 
     return (
       <div className="table-group">
@@ -136,13 +157,13 @@ class DataTables extends Component {
           <Table 
             onRow={this.onRow}
             rowKey={this.rowKey} 
-            dataSource={currentLessonsList} columns={columns} pagination={false} bordered />
+            dataSource={currentList} columns={columns} pagination={false} bordered />
         </div>
         <div className="table-item">
           <div className="table-item__title">历史数据</div>
           <Table 
             onRow={this.onRow}
-            rowKey={this.rowKey} dataSource={historyLessonsList} columns={columns} pagination={false} bordered />
+            rowKey={this.rowKey} dataSource={historyList} columns={columns} pagination={false} bordered />
         </div>
       </div>
     )
